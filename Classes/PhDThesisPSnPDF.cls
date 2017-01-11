@@ -283,8 +283,6 @@ supported!}
 \RequirePackage[title,titletoc]{appendix}
 
 \renewcommand{\contentsname}{Table of contents}
-\renewcommand{\listfigurename}{List of figures}
-\renewcommand{\listtablename}{List of tables}
 
 % Hides Contents appearing from TOC, but adds it to bookmarks
 \let\temptableofcontents\tableofcontents
@@ -1154,7 +1152,7 @@ wish to left align your text}
 % Normal abstract in the thesis
   \cleardoublepage
   \setsinglecolumn
-  \chapter*{\centering \Large Abstract}
+  \chapter*{\centering \Large Abstrak}
   \thispagestyle{empty}
 \fi
 }

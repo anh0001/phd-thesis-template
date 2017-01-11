@@ -5,7 +5,7 @@
 % Set {innerside margin / outerside margin / topmargin / bottom margin}  and
 % other page dimensions
 \ifsetCustomMargin
-  \RequirePackage[left=37mm,right=30mm,top=35mm,bottom=30mm]{geometry}
+  \RequirePackage[left=25mm,right=20mm,top=25mm,bottom=20mm]{geometry}
   \setFancyHdr % To apply fancy header after geometry package is loaded
 \fi
 
@@ -55,7 +55,8 @@
 %\RequirePackage[small,bf]{caption}
 
 \RequirePackage[labelsep=space,tableposition=top]{caption}
-\renewcommand{\figurename}{Fig.} %to support older versions of captions.sty
+\renewcommand{\figurename}{\bfseries Gambar } %to support older versions of captions.sty
+\renewcommand{\tablename}{\bfseries Tabel }
 
 
 % *************************** Graphics and figures *****************************
@@ -94,7 +95,60 @@
 
 % \doublespacing
 % \onehalfspacing
-% \singlespacing
+\singlespacing
+
+% ******************************* Chapter heading ******************************
+
+\renewcommand{\chaptername}{BAB}
+
+\RequirePackage{titlesec}
+
+\titleformat
+{\chapter} % command
+[display] % shape
+{\bfseries\Large} % format
+{\filright{\MakeUppercase{\chaptertitlename}} \thechapter} % label
+{1pt} % sep
+{
+    \uppercase
+} % before-code is code preceding the title body.
+[
+%\vspace{-0.5ex}%
+%\rule{\textwidth}{0.3pt}
+] % after-code is code following the title body.
+%FORMAT ****** \titlespacing{<command>}{<left>}{<before-sep>}{<after-sep>} *****
+\titlespacing{\chapter}{0pt}{0pt}{5ex}
+
+\titleformat
+{\section} % command
+[hang] % shape
+{\bfseries} % format
+{\filright{\MakeUppercase{\thesection}} } % label
+{0pt} % sep
+{
+    \uppercase
+} % before-code is code preceding the title body.
+\titlespacing{\section}{0pt}{1pt}{1pt}
+
+\titleformat
+{\subsection} % command
+[hang] % shape
+{\bfseries} % format
+{\filright{\thesubsection} } % label
+{0pt} % sep
+{
+} % before-code is code preceding the title body.
+\titlespacing{\subsection}{0pt}{1pt}{1pt}
+
+\titleformat
+{\subsubsection} % command
+[hang] % shape
+{\bfseries} % format
+{\filright{\thesubsubsection} } % label
+{0pt} % sep
+{
+} % before-code is code preceding the title body.
+\titlespacing{\subsubsection}{0pt}{1pt}{1pt}
 
 
 % ************************ Formatting / Footnote *******************************
@@ -123,7 +177,7 @@
 \fi
 
 % changes the default name `Bibliography` -> `References'
-\renewcommand{\bibname}{References}
+\renewcommand{\bibname}{Daftar Pustaka}
 
 
 % ******************************************************************************
@@ -136,10 +190,14 @@
 %\renewcommand{\listfigurename}{My List of Figures}
 %\renewcommand{\listtablename}{My List of Tables}
 
+\renewcommand{\contentsname}{Daftar Isi}
+\renewcommand{\listfigurename}{Daftar Gambar}
+\renewcommand{\listtablename}{Daftar Tabel}
+
 
 % ********************** TOC depth and numbering depth *************************
 
-\setcounter{secnumdepth}{2}
+\setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
 
 
@@ -148,14 +206,15 @@
 % To change the name of the Nomenclature section, uncomment the following line
 
 %\renewcommand{\nomname}{Symbols}
+\renewcommand{\nomname}{Daftar Simbol}
 
 
 % ********************************* Appendix ***********************************
 
 % The default value of both \appendixtocname and \appendixpagename is `Appendices'. These names can all be changed via:
 
-%\renewcommand{\appendixtocname}{List of appendices}
-%\renewcommand{\appendixname}{Appndx}
+\renewcommand{\appendixtocname}{Daftar Lampiran}
+\renewcommand{\appendixname}{Lampiran}
 
 % *********************** Configure Draft Mode **********************************
 
